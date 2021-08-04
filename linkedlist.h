@@ -5,8 +5,21 @@ struct node{
     int data;
     struct node* next;
 };
-typedef struct node Node;
 
+
+typedef struct node Node;
+typedef Node* S_List;
+
+
+Node** make_list();
+Node* make_node(int data);
+void addFirst(Node** list,int data);
+
+
+
+
+
+void display(Node** list);
 
 
 
