@@ -6,7 +6,7 @@
 
 
 int main(){
-	Node** List_1 = make_list();
+	S_List* List_1 = make_list();
 	addFirst(List_1,14);
 	addFirst(List_1,78);
 	addFirst(List_1,64);

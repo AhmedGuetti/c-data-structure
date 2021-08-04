@@ -3,21 +3,21 @@
 #include <stdbool.h>
 #include "linkedlist.h"
 
-Node** make_list(){
+S_List* make_list(){
     Node** list = (Node**) malloc(sizeof(Node*));
     return list;
 }
 
-Node* make_node(int data){
-    Node* new_node = (Node*) malloc(sizeof(Node));
+S_List make_node(int data){
+    S_List new_node = (S_List) malloc(sizeof(Node));
     new_node->data = data;
     new_node->next = NULL;
 }
 
 
 
-void addFirst(Node** list,int data){
-    Node* new_node = make_node(data);
+void addFirst(S_List* list,int data){
+    S_List new_node = make_node(data);
     if(*list != NULL) {
         new_node->next = *list;
         *list = new_node;
@@ -30,8 +30,8 @@ void addFirst(Node** list,int data){
 
 
 
-void display(Node** list){
-    Node* curr = *list;
+void display(S_List* list){
+    S_List curr = *list;
     while (curr!=NULL)
     {
         printf("%d ",curr->data);
