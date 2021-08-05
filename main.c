@@ -16,7 +16,17 @@ int main(){
 	addLast(List_1,789);
 	addLast(List_1,2);
 	add(List_1,1,5);
+
+
+	int arr[10]={1,2,3,4,5,6,7,8,9,10};
+
+	S_List* List_2 = arrayTolist(arr,10);
+
+
+	 
+	
 	display(List_1);
+	display(List_2);
 
 
 

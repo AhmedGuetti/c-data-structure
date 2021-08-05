@@ -4,7 +4,7 @@
 #include "linkedlist.h"
 
 S_List* make_list(){
-    Node** list = (Node**) malloc(sizeof(Node*));
+    S_List* list = (S_List*) malloc(sizeof(S_List));
     *list = NULL;
     return list;
 }
@@ -33,18 +33,14 @@ void addFirst(S_List* list,int data){
         new_node->next = *list;
         *list = new_node;
     }
-    else{
-        *list = new_node;   
-    }
+    else *list = new_node;   
 }
 
 void addLast(S_List* list,int data){
     S_List curr = *list;
     S_List new_node = make_node(data);
-    while (curr->next != NULL) 
-    {
+    while (curr->next != NULL)
         curr = curr->next;
-    }
     curr->next = new_node;
 
 }
@@ -60,17 +56,21 @@ void add(S_List* list,int data,int position){
         return;
     }
 
-    
-
-
-
     for (int i = 0; i < position-2; i++)
-    {
         curr = curr->next;
-    }
     new_node->next = curr->next;
     curr->next = new_node;
 
+}
+
+S_List* arrayTolist(int arr[],int size){
+    S_List* list = make_list();
+
+    for (int i = 0; i < size; i++){
+		addFirst(list,arr[i]);
+        }
+    return list;
+    
 }
 
 void display(S_List* list){
