@@ -115,6 +115,23 @@ void removeAt(S_List* list,int position){
         free(curr);
     }
 }
+
+
+void reverse(S_List* list){
+    S_List curr = *list;
+    S_List ptrnext;
+    *list = NULL;
+    while (curr != NULL){
+        ptrnext = curr->next;
+        curr->next = *list;
+        *list = curr;
+        curr = ptrnext;
+    }
+
+}
+
+
+
 S_List* arrayTolist(int arr[],int size){
     S_List* list = make_list();
 

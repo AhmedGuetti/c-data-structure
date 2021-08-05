@@ -19,6 +19,7 @@ int main(){
 	removeFirst(List_1);
 	removeLast(List_1);
 	removeAt(List_1,7);
+	reverse(List_1);
 	int arr[10]={1,2,3,4,5,6,7,8,9,10};
 
 	S_List* List_2 = arrayTolist(arr,10);
