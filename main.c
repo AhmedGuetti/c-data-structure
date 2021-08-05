@@ -12,6 +12,9 @@ int main(){
 	addFirst(List_1,64);
 	addFirst(List_1,95);
 	addFirst(List_1,546);
+	addLast(List_1,7);
+	addLast(List_1,789);
+	addLast(List_1,2);
 
 	display(List_1);
 

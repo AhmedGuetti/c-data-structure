@@ -5,6 +5,7 @@
 
 S_List* make_list(){
     Node** list = (Node**) malloc(sizeof(Node*));
+    *list = NULL;
     return list;
 }
 
@@ -27,6 +28,16 @@ void addFirst(S_List* list,int data){
     }
 }
 
+void addLast(S_List* list,int data){
+    S_List curr = *list;
+    S_List new_node = make_node(data);
+    while (curr->next != NULL) 
+    {
+        curr = curr->next;
+    }
+    curr->next = new_node;
+
+}
 
 
 
