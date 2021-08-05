@@ -16,14 +16,16 @@ S_List make_node(int data);
 void addFirst(S_List* list,int data);
 void addLast(S_List* list,int data);
 void add(S_List* list,int data,int position);
+void removeFirst(S_List* list);
+void removeLast(S_List* list);
+
+void removeAt(S_List* list,int position);
+
 S_List* arrayTolist(int data[],int size);
 
 
 
 
 
-void display(Node** list);
-
-
-
+void display(S_List* list);
 #endif

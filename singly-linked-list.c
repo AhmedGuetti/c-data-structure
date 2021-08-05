@@ -63,6 +63,58 @@ void add(S_List* list,int data,int position){
 
 }
 
+
+void removeFirst(S_List* list){
+    S_List curr = *list;
+    if(*list==NULL){
+        printf("ERROR : The list is Empty");
+        return;
+    }
+    else{
+        *list = curr->next->next;
+        free(curr->next);
+    }
+}
+
+
+void removeLast(S_List* list){
+    S_List curr = *list;
+    S_List prev;
+    if(*list==NULL){
+        printf("ERROR : The list is Empty");
+        return;
+    }
+    else{
+        while (curr->next != NULL){
+            prev = curr;
+            curr = curr->next;
+        }
+        prev->next = NULL;
+        free(curr);
+    }
+}
+
+void removeAt(S_List* list,int position){
+    S_List curr = *list;
+    S_List prev= curr;
+    if(*list==NULL){
+        printf("ERROR : The list is Empty");
+        return;
+    }
+    else if(position > sizelist(list)){
+        printf("ERROR : Index out of Boundry cant remove the element at position %d\n", position);
+        return;
+    }
+    else{
+        for (int i = 0; i < position-1; i++)
+        {
+            prev = curr;
+            curr = curr->next;
+        }     
+        prev->next = curr->next;
+        free(curr);
+    }
+}
 S_List* arrayTolist(int arr[],int size){
     S_List* list = make_list();
 
