@@ -16,7 +16,17 @@ S_List make_node(int data){
 }
 
 
+int sizelist(S_List* list){
+    int i=0;
+    S_List curr = *list;
+    while (curr != NULL)
+    {
+        curr = curr->next;
+        i++;
+    }
+    return i;
 
+}
 void addFirst(S_List* list,int data){
     S_List new_node = make_node(data);
     if(*list != NULL) {
@@ -39,7 +49,29 @@ void addLast(S_List* list,int data){
 
 }
 
+void add(S_List* list,int data,int position){
+    S_List curr = *list;
+    S_List new_node = make_node(data);
+    int size = sizelist(list);
+    if (*list == NULL || position == 1) addFirst(list,data);
 
+    else if(position > size+1 || position == 0) {
+        printf("ERROR : position out of boundry");
+        return;
+    }
+
+    
+
+
+
+    for (int i = 0; i < position-2; i++)
+    {
+        curr = curr->next;
+    }
+    new_node->next = curr->next;
+    curr->next = new_node;
+
+}
 
 void display(S_List* list){
     S_List curr = *list;

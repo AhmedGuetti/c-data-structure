@@ -15,7 +15,7 @@ int main(){
 	addLast(List_1,7);
 	addLast(List_1,789);
 	addLast(List_1,2);
-
+	add(List_1,1,5);
 	display(List_1);
 
 
