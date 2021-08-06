@@ -21,7 +21,7 @@ void removeLast(S_List* list);
 
 void removeAt(S_List* list,int position);
 void reverse(S_List* list);
-
+int sizelist(S_List* list);
 S_List* arrayTolist(int data[],int size);
 
 

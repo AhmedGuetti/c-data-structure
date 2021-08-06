@@ -21,15 +21,16 @@ int main(){
 	removeAt(List_1,7);
 	reverse(List_1);
 	int arr[10]={1,2,3,4,5,6,7,8,9,10};
+	int size = sizeof(arr)/sizeof(arr[0]);
+	S_List* List_2 = arrayTolist(arr,size);
 
-	S_List* List_2 = arrayTolist(arr,10);
 
 
-	 
 	
 	display(List_1);
 	display(List_2);
 
-
+	 printf("%d", sizelist(List_1));
+	 printf("%d", sizelist(List_2));
 
 }

@@ -130,8 +130,6 @@ void reverse(S_List* list){
 
 }
 
-
-
 S_List* arrayTolist(int arr[],int size){
     S_List* list = make_list();
 
